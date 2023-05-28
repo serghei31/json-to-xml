@@ -6,4 +6,4 @@
 
 ### 1. Install the package -> npm i json-to-xml-converter
 
-### 2. Use the isntalled package in your project file -> '''const jsonConverter = require('json-to-xml-converter');'''
+### 2. Use the installed package in your project file -> <sup>const jsonConverter = require('json-to-xml-converter');</sup>
