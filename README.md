@@ -1,5 +1,7 @@
-# json-to-xml node.js package made to pass the https://github.com/Imagination-Media/retrieve-test test
+# Json to XML converter
 
-# Follow the following commands to instal and use the package
+### json-to-xml node.js package made to pass the https://github.com/Imagination-Media/retrieve-test test
 
-# 1. Install the package -> npm i json-to-xml-converter
+## Follow the following commands to instal and use the package
+
+### 1. Install the package -> npm i json-to-xml-converter
