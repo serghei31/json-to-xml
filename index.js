@@ -5,7 +5,6 @@ const mappingJson = require('./mapping.json');
 function jsonConverter() {
   try {
     const orderJson = JSON.parse(fs.readFileSync('order.json'));
-    const mappingJson = JSON.parse(fs.readFileSync('mapping.json'));
 
     const xmlHeader =
       '<SalesOrders xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="SORTOIDOC.XSD">\n';
