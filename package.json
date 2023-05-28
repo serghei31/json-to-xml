@@ -1,6 +1,6 @@
 {
   "name": "json-to-xml-converter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JSON to XML converter of Magento2 order export",
   "main": "index.js",
   "scripts": {
