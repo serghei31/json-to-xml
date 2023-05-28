@@ -1,0 +1,21 @@
+{
+  "name": "json-to-xml-converter",
+  "version": "1.0.0",
+  "description": "JSON to XML converter of Magento2 order export",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serghei31/json-to-xml.git"
+  },
+  "author": "Serghei Covali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serghei31/json-to-xml/issues"
+  },
+  "homepage": "https://github.com/serghei31/json-to-xml#readme"
+}

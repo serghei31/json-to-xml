@@ -1,0 +1,166 @@
+[
+  {
+    "target": "OrderHeader",
+    "values": [
+      {
+        "origin": "",
+        "target": "OrderActionType",
+        "static_value": "A"
+      },
+      {
+        "origin": "extension_attributes.syspro_id",
+        "target": "Customer"
+      },
+      {
+        "origin": "created_at",
+        "target": "OrderDate",
+        "convert_function": "data.substring(0, 10)"
+      },
+      {
+        "origin": "extension_attributes.terms_code",
+        "target": "InvoiceTerms"
+      },
+      {
+        "origin": "base_currency_code",
+        "target": "Currency",
+        "convert_function": "convertCurrencyToSymbol(data)"
+      },
+      {
+        "origin": "shipping_description",
+        "target": "ShippingInstrs"
+      },
+      {
+        "origin": "billing_address.company",
+        "target": "CustomerName"
+      },
+      {
+        "origin": "billing_address.street",
+        "target": "ShipAddress1",
+        "convert_function": "data[0]"
+      },
+      {
+        "origin": "billing_address.street",
+        "target": "ShipAddress2",
+        "convert_function": "data[1]"
+      },
+      {
+        "origin": "billing_address.city",
+        "target": "ShipAddress3"
+      },
+      {
+        "origin": "billing_address.region_code",
+        "target": "ShipAddress4"
+      },
+      {
+        "origin": "billing_address.postcode",
+        "target": "ShipPostalCode"
+      },
+      {
+        "origin": "billing_address.email",
+        "target": "Email"
+      }
+    ]
+  },
+  {
+    "target": "OrderDetails",
+    "values": [
+      {
+        "target": "StockLine",
+        "orders": "items",
+        "values": [
+          {
+            "origin": "",
+            "target": "CustomerPoLine",
+            "convert_function": "poLine"
+          },
+          {
+            "origin": "parent_item.sku",
+            "target": "StockCode"
+          },
+          {
+            "origin": "extension_attributes.suggested_inventory_source",
+            "target": "Warehouse"
+          },
+          {
+            "origin": "extension_attributes.unit_of_measure_qty",
+            "target": "OrderQty"
+          },
+          {
+            "origin": "extension_attributes.unit_of_measure",
+            "target": "OrderUom"
+          },
+          {
+            "origin": "extension_attributes.unit_of_measure_price",
+            "target": "Price"
+          },
+          {
+            "origin": "extension_attributes.unit_of_measure",
+            "target": "PriceUom"
+          },
+          {
+            "origin": "",
+            "target": "PriceCode",
+            "static_value": "TEST"
+          },
+          {
+            "origin": "",
+            "target": "AlwaysUsePriceEntered",
+            "static_value": "Y"
+          },
+          {
+            "origin": "",
+            "target": "AlwaysUseDiscountEntered",
+            "static_value": "N"
+          },
+          {
+            "origin": "updated_at",
+            "target": "CustRequestDate",
+            "convert_function": "data.substring(0, 10)"
+          }
+        ]
+      },
+      {
+        "target": "CommentLine",
+        "values": [
+          {
+            "origin": "",
+            "target": "CustomerPoLine",
+            "convert_function": "++cpol"
+          },
+          {
+            "origin": "",
+            "target": "LineActionType",
+            "static_value": "A"
+          },
+          {
+            "origin": "extension_attributes.bold_order_comment",
+            "target": "Comment"
+          }
+        ]
+      },
+      {
+        "target": "FreightLine",
+        "values": [
+          {
+            "origin": "",
+            "target": "CustomerPoLine",
+            "convert_function": "++cpol"
+          },
+          {
+            "origin": "",
+            "target": "LineActionType",
+            "static_value": "A"
+          },
+          {
+            "origin": "shipping_amount",
+            "target": "FreightValue"
+          },
+          {
+            "origin": "shipping_incl_tax",
+            "target": "FreightCost"
+          }
+        ]
+      }
+    ]
+  }
+]
